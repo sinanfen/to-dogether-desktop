@@ -166,4 +166,4 @@ For support and questions, please open an issue on GitHub or contact the develop
 
 ---
 
-Made with ❤️ for couples who want to stay organized together. 
+Made with ❤️ for couples who want to stay organized together.
