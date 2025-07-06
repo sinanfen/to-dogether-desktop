@@ -1,0 +1,45 @@
+{
+  "name": "to-dogether",
+  "version": "1.0.0",
+  "description": "To-Do List Desktop App for Couples - Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron . --dev",
+    "dev:win": "set NODE_ENV=development && electron . --dev",
+    "prod": "NODE_ENV=production electron .",
+    "prod:win": "set NODE_ENV=production && electron .",
+    "build": "electron-builder",
+    "watch": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch"
+  },
+  "keywords": [
+    "todo",
+    "couples",
+    "electron",
+    "desktop"
+  ],
+  "author": "To-dogether Team",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "electron": "^37.2.0",
+    "electron-builder": "^24.9.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "@simonwep/pickr": "^1.9.1",
+    "axios": "^1.6.2"
+  },
+  "build": {
+    "appId": "com.todogether.app",
+    "productName": "To-dogether",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*"
+    ]
+  }
+}
