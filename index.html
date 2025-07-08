@@ -7,54 +7,54 @@
   <link rel="stylesheet" href="src/styles/output.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
-<body class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
+<body class="min-h-screen bg-gradient-to-br via-white from-primary-50 to-secondary-50">
   <!-- Loading Screen -->
-  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+  <div id="loadingScreen" class="flex fixed inset-0 z-50 justify-center items-center bg-white">
     <div class="text-center">
-      <div class="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin mx-auto mb-4"></div>
-      <h2 class="text-xl font-display text-gray-700">To-dogether</h2>
-      <p class="text-gray-500 mt-2">Yükleniyor...</p>
+      <div class="mx-auto mb-4 w-16 h-16 rounded-full border-4 animate-spin border-primary-200 border-t-primary-600"></div>
+      <h2 class="text-xl text-gray-700 font-display">To-dogether</h2>
+      <p class="mt-2 text-gray-500">Yükleniyor...</p>
     </div>
   </div>
 
   <!-- Login Screen -->
-  <div id="loginScreen" class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+  <div id="loginScreen" class="flex justify-center items-center p-4 min-h-screen bg-gradient-to-br via-white from-primary-50 to-secondary-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <!-- Logo -->
-      <div class="text-center mb-8">
-        <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <span class="text-white font-bold text-2xl">T</span>
+      <div class="mb-8 text-center">
+        <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-gradient-to-r rounded-2xl from-primary-500 to-secondary-500">
+          <span class="text-2xl font-bold text-white">T</span>
         </div>
-        <h1 class="text-2xl font-display font-bold text-gray-900">To-dogether</h1>
-        <p class="text-gray-600 mt-2">Birlikte Planla, Birlikte Yap!</p>
+        <h1 class="text-2xl font-bold text-gray-900 font-display">To-dogether</h1>
+        <p class="mt-2 text-gray-600">Birlikte Planla, Birlikte Yap!</p>
       </div>
 
       <!-- Login Form -->
       <form id="loginForm" class="space-y-6">
         <div>
-          <label for="loginUsername" class="block text-sm font-medium text-gray-700 mb-2">Kullanıcı Adı</label>
+          <label for="loginUsername" class="block mb-2 text-sm font-medium text-gray-700">Kullanıcı Adı</label>
           <input type="text" id="loginUsername" class="input" placeholder="Kullanıcı adınızı girin" required>
         </div>
         
         <div>
-          <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">Şifre</label>
+          <label for="loginPassword" class="block mb-2 text-sm font-medium text-gray-700">Şifre</label>
           <div class="relative">
-            <input type="password" id="loginPassword" class="input pr-10" placeholder="Şifrenizi girin" required>
-            <button type="button" id="loginPasswordToggle" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+            <input type="password" id="loginPassword" class="pr-10 input" placeholder="Şifrenizi girin" required>
+            <button type="button" id="loginPasswordToggle" class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-400 hover:text-gray-600">
               <svg id="loginPasswordShow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
               </svg>
-              <svg id="loginPasswordHide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg id="loginPasswordHide" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
               </svg>
             </button>
           </div>
         </div>
 
-        <div id="loginError" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"></div>
+        <div id="loginError" class="hidden px-4 py-3 text-sm text-red-700 bg-red-50 rounded-lg border border-red-200"></div>
 
-        <button type="submit" class="w-full btn-primary py-3">
+        <button type="submit" class="py-3 w-full btn-primary">
           <span id="loginButtonText">Giriş Yap</span>
           <div id="loginSpinner" class="hidden loading-dots">
             <div></div>
@@ -66,42 +66,42 @@
 
       <!-- Register Link -->
       <div class="mt-6 text-center">
-        <p class="text-gray-600 text-sm">
+        <p class="text-sm text-gray-600">
           Hesabınız yok mu? 
-          <button id="showRegisterForm" class="text-primary-600 hover:text-primary-700 font-medium">Kayıt Ol</button>
+          <button id="showRegisterForm" class="font-medium text-primary-600 hover:text-primary-700">Kayıt Ol</button>
         </p>
       </div>
     </div>
   </div>
 
   <!-- Register Screen -->
-  <div id="registerScreen" class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+  <div id="registerScreen" class="flex hidden justify-center items-center p-4 min-h-screen bg-gradient-to-br via-white from-primary-50 to-secondary-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <!-- Logo -->
-      <div class="text-center mb-8">
-        <div class="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <span class="text-white font-bold text-2xl">T</span>
+      <div class="mb-8 text-center">
+        <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-gradient-to-r rounded-2xl from-primary-500 to-secondary-500">
+          <span class="text-2xl font-bold text-white">T</span>
         </div>
-        <h1 class="text-2xl font-display font-bold text-gray-900">Hesap Oluştur</h1>
-        <p class="text-gray-600 mt-2">To-dogether'a katılın</p>
+        <h1 class="text-2xl font-bold text-gray-900 font-display">Hesap Oluştur</h1>
+        <p class="mt-2 text-gray-600">To-dogether'a katılın</p>
       </div>
 
       <form id="registerFormElement" class="space-y-6">
         <div>
-          <label for="registerUsername" class="block text-sm font-medium text-gray-700 mb-2">Kullanıcı Adı</label>
+          <label for="registerUsername" class="block mb-2 text-sm font-medium text-gray-700">Kullanıcı Adı</label>
           <input type="text" id="registerUsername" class="input" placeholder="Kullanıcı adı seçin" required>
         </div>
         
         <div>
-          <label for="registerPassword" class="block text-sm font-medium text-gray-700 mb-2">Şifre</label>
+          <label for="registerPassword" class="block mb-2 text-sm font-medium text-gray-700">Şifre</label>
           <div class="relative">
-            <input type="password" id="registerPassword" class="input pr-10" placeholder="Güçlü bir şifre oluşturun" required>
-            <button type="button" id="registerPasswordToggle" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+            <input type="password" id="registerPassword" class="pr-10 input" placeholder="Güçlü bir şifre oluşturun" required>
+            <button type="button" id="registerPasswordToggle" class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-400 hover:text-gray-600">
               <svg id="registerPasswordShow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
               </svg>
-              <svg id="registerPasswordHide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg id="registerPasswordHide" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
               </svg>
             </button>
@@ -109,15 +109,15 @@
         </div>
 
         <div>
-          <label for="registerPasswordConfirm" class="block text-sm font-medium text-gray-700 mb-2">Şifre Tekrar</label>
+          <label for="registerPasswordConfirm" class="block mb-2 text-sm font-medium text-gray-700">Şifre Tekrar</label>
           <div class="relative">
-            <input type="password" id="registerPasswordConfirm" class="input pr-10" placeholder="Şifrenizi tekrar girin" required>
-            <button type="button" id="registerPasswordConfirmToggle" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+            <input type="password" id="registerPasswordConfirm" class="pr-10 input" placeholder="Şifrenizi tekrar girin" required>
+            <button type="button" id="registerPasswordConfirmToggle" class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-400 hover:text-gray-600">
               <svg id="registerPasswordConfirmShow" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
               </svg>
-              <svg id="registerPasswordConfirmHide" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg id="registerPasswordConfirmHide" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
               </svg>
             </button>
@@ -134,13 +134,13 @@
 
         <!-- Davet Kodu Input (Hidden by default) -->
         <div id="inviteCodeContainer" class="hidden">
-          <label for="registerInviteCode" class="block text-sm font-medium text-gray-700 mb-2">Davet Kodu</label>
+          <label for="registerInviteCode" class="block mb-2 text-sm font-medium text-gray-700">Davet Kodu</label>
           <input type="text" id="registerInviteCode" class="input" placeholder="Davet kodunu giriniz">
         </div>
 
-        <div id="registerError" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"></div>
+        <div id="registerError" class="hidden px-4 py-3 text-sm text-red-700 bg-red-50 rounded-lg border border-red-200"></div>
 
-        <button type="submit" class="w-full btn-primary py-3">
+        <button type="submit" class="py-3 w-full btn-primary">
           <span id="registerButtonText">Kayıt Ol</span>
           <div id="registerSpinner" class="hidden loading-dots">
             <div></div>
@@ -152,9 +152,9 @@
 
       <!-- Login Link -->
       <div class="mt-6 text-center">
-        <p class="text-gray-600 text-sm">
+        <p class="text-sm text-gray-600">
           Zaten hesabınız var mı? 
-          <button id="showLoginForm" class="text-primary-600 hover:text-primary-700 font-medium">Giriş Yap</button>
+          <button id="showLoginForm" class="font-medium text-primary-600 hover:text-primary-700">Giriş Yap</button>
         </p>
       </div>
     </div>
@@ -162,11 +162,11 @@
 
   <!-- Welcome Page Container -->
   <div id="welcomePage" class="hidden">
-    <div class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 flex items-center justify-center p-4">
-      <div class="max-w-md w-full">
-        <div class="card text-center space-y-6">
+    <div class="flex justify-center items-center p-4 min-h-screen bg-gradient-to-br via-white from-primary-50 to-secondary-50">
+      <div class="w-full max-w-md">
+        <div class="space-y-6 text-center card">
           <!-- Success Icon -->
-          <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto">
+          <div class="flex justify-center items-center mx-auto w-16 h-16 rounded-full bg-success-100">
             <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
@@ -174,45 +174,45 @@
           
           <!-- Welcome Message -->
           <div>
-            <h1 class="text-2xl font-display font-bold text-gray-900">Hoş Geldiniz!</h1>
-            <p class="text-gray-600 mt-2">Başarıyla kayıt oldunuz, <span id="welcomeUsername" class="font-semibold text-primary-600"></span></p>
+            <h1 class="text-2xl font-bold text-gray-900 font-display">Hoş Geldiniz!</h1>
+            <p class="mt-2 text-gray-600">Başarıyla kayıt oldunuz, <span id="welcomeUsername" class="font-semibold text-primary-600"></span></p>
           </div>
           
           <!-- Invite Code Section -->
-          <div class="bg-gray-50 rounded-lg p-4 space-y-3">
+          <div class="p-4 space-y-3 bg-gray-50 rounded-lg">
             <h3 class="text-sm font-medium text-gray-700">Davet Kodunuz</h3>
             <div class="flex items-center space-x-2">
-              <input type="text" id="inviteCodeDisplay" class="flex-1 input text-center font-mono text-sm bg-white" readonly>
-              <button id="copyInviteCode" class="btn-secondary px-3 py-2 text-sm">
+              <input type="text" id="inviteCodeDisplay" class="flex-1 font-mono text-sm text-center bg-white input" readonly>
+              <button id="copyInviteCode" class="px-3 py-2 text-sm btn-secondary">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                 </svg>
               </button>
             </div>
-            <div id="copySuccess" class="hidden text-success-600 text-sm font-medium">Kopyalandı!</div>
+            <div id="copySuccess" class="hidden text-sm font-medium text-success-600">Kopyalandı!</div>
           </div>
           
           <!-- Instructions -->
-          <div class="text-left space-y-3">
+          <div class="space-y-3 text-left">
             <h3 class="text-sm font-medium text-gray-700">Nasıl Çalışır?</h3>
             <div class="space-y-2 text-sm text-gray-600">
               <div class="flex items-start space-x-2">
-                <div class="w-5 h-5 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">1</div>
+                <div class="flex justify-center items-center mt-0.5 w-5 h-5 text-xs font-bold rounded-full bg-primary-100 text-primary-600">1</div>
                 <p>Bu davet kodunu arkadaşınıza gönderin</p>
               </div>
               <div class="flex items-start space-x-2">
-                <div class="w-5 h-5 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">2</div>
+                <div class="flex justify-center items-center mt-0.5 w-5 h-5 text-xs font-bold rounded-full bg-primary-100 text-primary-600">2</div>
                 <p>Arkadaşınız aynı kodla kayıt olduğunda çift oluşur</p>
               </div>
               <div class="flex items-start space-x-2">
-                <div class="w-5 h-5 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-xs font-bold mt-0.5">3</div>
+                <div class="flex justify-center items-center mt-0.5 w-5 h-5 text-xs font-bold rounded-full bg-primary-100 text-primary-600">3</div>
                 <p>Artık birlikte görevlerinizi yönetebilirsiniz</p>
               </div>
             </div>
           </div>
           
           <!-- Continue Button -->
-          <button id="continueToApp" class="w-full btn-primary py-3">
+          <button id="continueToApp" class="py-3 w-full btn-primary">
             Uygulamaya Devam Et
           </button>
         </div>
@@ -223,19 +223,20 @@
   <!-- Main App Container -->
   <div id="app" class="hidden">
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-40">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-40 border-b border-gray-200 backdrop-blur-sm bg-white/80">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-sm">T</span>
+            <div class="flex justify-center items-center w-8 h-8 bg-gradient-to-r rounded-lg from-primary-500 to-secondary-500">
+              <span class="text-sm font-bold text-white">T</span>
             </div>
-            <h1 class="text-xl font-display font-semibold text-gray-900">To-dogether</h1>
-            <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">v1.0.0</span>
+            <h1 class="text-xl font-semibold text-gray-900 font-display whitespace-nowrap">To-dogether</h1>
+            <span class="px-2 py-1 text-xs text-gray-500 bg-gray-100 rounded-full">v1.0.0</span>
           </div>
           
           <div class="flex items-center space-x-4">
-            <button id="settingsBtn" class="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+            <div id="headerUserInfo" class="text-sm text-gray-600 whitespace-nowrap user-info"></div>
+            <button id="settingsBtn" class="p-2 text-gray-400 transition-colors hover:text-gray-600">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -247,30 +248,30 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- Dashboard View -->
       <div id="dashboardView" class="space-y-8">
         <!-- Welcome Section -->
-        <div class="text-center space-y-4">
-          <h2 class="text-3xl font-display font-bold text-gray-900">
+        <div class="space-y-4 text-center">
+          <h2 class="text-3xl font-bold text-gray-900 font-display">
             Birlikte Planla, <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">Birlikte Yap!</span>
           </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <p class="mx-auto max-w-2xl text-gray-600">
             Evlilik hazırlıklarınızı birlikte organize edin. Her ikinizin de görevlerini takip edin ve birlikte hedeflerinize ulaşın.
           </p>
         </div>
 
         <!-- Partner Cards -->
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid gap-8 mx-auto max-w-4xl md:grid-cols-2">
           <!-- Partner 1 Card -->
-          <div id="partner1Card" class="card cursor-pointer transform hover:scale-105 transition-all duration-300 group">
-            <div class="text-center space-y-4">
-              <div class="w-20 h-20 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:shadow-xl transition-shadow">
+          <div id="partner1Card" class="transition-all duration-300 transform cursor-pointer card hover:scale-105 group">
+            <div class="space-y-4 text-center">
+              <div class="flex justify-center items-center mx-auto w-20 h-20 text-2xl font-bold text-white bg-gradient-to-br rounded-full shadow-lg transition-shadow from-primary-400 to-primary-600 group-hover:shadow-xl">
                 ?
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900">Yükleniyor...</h3>
-                <p class="text-gray-500 text-sm">Partner 1</p>
+                <p class="text-sm text-gray-500">Partner 1</p>
               </div>
               <div class="flex justify-center space-x-2">
                 <span class="badge-success">0 Aktif</span>
@@ -280,14 +281,14 @@
           </div>
 
           <!-- Partner 2 Card -->
-          <div id="partner2Card" class="card opacity-50 cursor-not-allowed transform transition-all duration-300 group">
-            <div class="text-center space-y-4">
-              <div class="w-20 h-20 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg transition-shadow">
+          <div id="partner2Card" class="opacity-50 transition-all duration-300 transform cursor-not-allowed card group">
+            <div class="space-y-4 text-center">
+              <div class="flex justify-center items-center mx-auto w-20 h-20 text-2xl font-bold text-white bg-gradient-to-br from-gray-300 to-gray-400 rounded-full shadow-lg transition-shadow">
                 ?
               </div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900">Partner Bekleniyor</h3>
-                <p class="text-gray-500 text-sm">Davet kodu ile katılım</p>
+                <p class="text-sm text-gray-500">Davet kodu ile katılım</p>
               </div>
               <div class="flex justify-center space-x-2">
                 <span class="badge-success">0 Aktif</span>
@@ -298,14 +299,14 @@
         </div>
 
         <!-- Todo Lists Management -->
-        <div class="max-w-6xl mx-auto space-y-6">
+        <div class="mx-auto space-y-6 max-w-6xl">
           <!-- Header -->
-          <div class="flex items-center justify-between">
+          <div class="flex justify-between items-center">
             <div>
-              <h3 class="text-2xl font-display font-bold text-gray-900">Todo Listeleri</h3>
-              <p class="text-gray-600 mt-1">Görev listelerinizi yönetin ve organize edin</p>
+              <h3 class="text-2xl font-bold text-gray-900 font-display">Todo Listeleri</h3>
+              <p class="mt-1 text-gray-600">Görev listelerinizi yönetin ve organize edin</p>
             </div>
-            <button id="createTodoListBtn" class="btn-primary flex items-center space-x-2">
+            <button id="createTodoListBtn" class="flex items-center space-x-2 btn-primary">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
               </svg>
@@ -314,19 +315,19 @@
           </div>
 
           <!-- Todo Lists Grid -->
-          <div id="todoListsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div id="todoListsContainer" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <!-- Todo lists will be dynamically added here -->
           </div>
 
           <!-- Empty State -->
-          <div id="emptyTodoLists" class="text-center py-12">
-            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div id="emptyTodoLists" class="py-12 text-center">
+            <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-gray-100 rounded-full">
               <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
               </svg>
             </div>
-            <h3 class="text-lg font-medium text-gray-900 mb-2">Henüz todo listesi yok</h3>
-            <p class="text-gray-500 mb-4">İlk todo listenizi oluşturarak başlayın</p>
+            <h3 class="mb-2 text-lg font-medium text-gray-900">Henüz todo listesi yok</h3>
+            <p class="mb-4 text-gray-500">İlk todo listenizi oluşturarak başlayın</p>
             <button id="createFirstTodoListBtn" class="btn-primary">
               İlk Listeyi Oluştur
             </button>
@@ -334,18 +335,121 @@
         </div>
 
         <!-- Quick Stats -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="card text-center">
+        <div class="grid grid-cols-1 gap-6 mx-auto max-w-4xl md:grid-cols-3">
+          <div class="text-center card">
             <div class="text-2xl font-bold text-primary-600">0</div>
             <div class="text-sm text-gray-600">Toplam Görev</div>
           </div>
-          <div class="card text-center">
+          <div class="text-center card">
             <div class="text-2xl font-bold text-success-600">0</div>
             <div class="text-sm text-gray-600">Tamamlanan</div>
           </div>
-          <div class="card text-center">
+          <div class="text-center card">
             <div class="text-2xl font-bold text-warning-600">0</div>
             <div class="text-sm text-gray-600">Bekleyen</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todo Detail View -->
+      <div id="todoDetailView" class="hidden space-y-8">
+        <!-- Header with Back Button -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <button id="backToDashboard" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              <span>Geri Dön</span>
+            </button>
+            <div class="w-px h-6 bg-gray-300"></div>
+            <div>
+              <h1 id="todoDetailTitle" class="text-3xl font-bold text-gray-900 font-display">Todo Listesi</h1>
+              <p id="todoDetailDescription" class="text-gray-600 mt-1">Liste açıklaması</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button id="editTodoDetailBtn" class="btn-secondary flex items-center space-x-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+              <span>Düzenle</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Todo Info Card -->
+        <div class="card">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div id="todoDetailTotalCount" class="text-3xl font-bold text-primary-600">0</div>
+              <div class="text-sm text-gray-600">Toplam Görev</div>
+            </div>
+            <div class="text-center">
+              <div id="todoDetailCompletedCount" class="text-3xl font-bold text-success-600">0</div>
+              <div class="text-sm text-gray-600">Tamamlanan</div>
+            </div>
+            <div class="text-center">
+              <div id="todoDetailPendingCount" class="text-3xl font-bold text-warning-600">0</div>
+              <div class="text-sm text-gray-600">Bekleyen</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add New Todo Item -->
+        <div class="card">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Yeni Görev Ekle</h3>
+          <form id="addTodoItemDetailForm" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="text" id="todoItemDetailTitle" placeholder="Görev başlığı..." class="input" required>
+              <select id="todoItemDetailSeverity" class="input">
+                <option value="0">Düşük Öncelik</option>
+                <option value="1" selected>Orta Öncelik</option>
+                <option value="2">Yüksek Öncelik</option>
+              </select>
+            </div>
+            <textarea id="todoItemDetailDescription" placeholder="Görev açıklaması (opsiyonel)..." class="input h-20 resize-none"></textarea>
+            <div class="flex justify-end">
+              <button type="submit" class="btn-primary flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+                <span>Görev Ekle</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Todo Items List -->
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-semibold text-gray-900">Görevler</h3>
+            <div class="flex items-center space-x-2">
+              <button id="filterAllTodos" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors filter-btn active">
+                Tümü
+              </button>
+              <button id="filterPendingTodos" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors filter-btn">
+                Bekleyen
+              </button>
+              <button id="filterCompletedTodos" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors filter-btn">
+                Tamamlanan
+              </button>
+            </div>
+          </div>
+          
+          <div id="todoItemsDetailContainer" class="space-y-3">
+            <!-- Todo items will be dynamically added here -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="emptyTodoItems" class="text-center py-12 hidden">
+            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Henüz görev yok</h3>
+            <p class="text-gray-500">İlk görevinizi ekleyerek başlayın</p>
           </div>
         </div>
       </div>
@@ -353,11 +457,11 @@
   </div>
 
   <!-- Settings Modal -->
-  <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+  <div id="settingsModal" class="flex hidden fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-display font-bold text-gray-900">Ayarlar</h2>
-        <button id="closeSettingsModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <h2 class="text-xl font-bold text-gray-900 font-display">Ayarlar</h2>
+        <button id="closeSettingsModal" class="text-gray-400 transition-colors hover:text-gray-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -365,14 +469,14 @@
       </div>
 
       <div class="space-y-4">
-        <button id="editProfileBtn" class="w-full btn-secondary text-left flex items-center space-x-3">
+        <button id="editProfileBtn" class="flex items-center space-x-3 w-full text-left btn-secondary">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
           </svg>
           <span>Profil Düzenle</span>
         </button>
         
-        <button id="logoutBtn" class="w-full btn-danger text-left flex items-center space-x-3">
+        <button id="logoutBtn" class="flex items-center space-x-3 w-full text-left btn-danger">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
           </svg>
@@ -383,11 +487,11 @@
   </div>
 
   <!-- Profile Edit Modal -->
-  <div id="profileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+  <div id="profileModal" class="flex hidden fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-display font-bold text-gray-900">Profil Düzenle</h2>
-        <button id="closeProfileModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <h2 class="text-xl font-bold text-gray-900 font-display">Profil Düzenle</h2>
+        <button id="closeProfileModal" class="text-gray-400 transition-colors hover:text-gray-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -396,25 +500,25 @@
 
       <form id="profileForm" class="space-y-6">
         <div>
-          <label for="profileUsername" class="block text-sm font-medium text-gray-700 mb-2">Kullanıcı Adı</label>
+          <label for="profileUsername" class="block mb-2 text-sm font-medium text-gray-700">Kullanıcı Adı</label>
           <input type="text" id="profileUsername" class="input" placeholder="Kullanıcı adınızı girin" required>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Renk Seçimi</label>
+          <label class="block mb-2 text-sm font-medium text-gray-700">Renk Seçimi</label>
           <div class="flex items-center space-x-4">
-            <div id="colorPicker" class="w-12 h-12 rounded-lg border-2 border-gray-300 cursor-pointer flex items-center justify-center">
+            <div id="colorPicker" class="flex justify-center items-center w-12 h-12 rounded-lg border-2 border-gray-300 cursor-pointer">
               <div id="selectedColor" class="w-8 h-8 rounded-md"></div>
             </div>
-            <input type="text" id="colorCode" class="input flex-1" placeholder="#3B82F6" readonly>
+            <input type="text" id="colorCode" class="flex-1 input" placeholder="#3B82F6" readonly>
           </div>
         </div>
 
-        <div id="profileError" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"></div>
+        <div id="profileError" class="hidden px-4 py-3 text-sm text-red-700 bg-red-50 rounded-lg border border-red-200"></div>
 
         <div class="flex space-x-3">
-          <button type="button" id="cancelProfileEdit" class="btn-secondary flex-1">İptal</button>
-          <button type="submit" class="btn-primary flex-1">
+          <button type="button" id="cancelProfileEdit" class="flex-1 btn-secondary">İptal</button>
+          <button type="submit" class="flex-1 btn-primary">
             <span id="profileButtonText">Kaydet</span>
             <div id="profileSpinner" class="hidden loading-dots">
               <div></div>
@@ -428,11 +532,11 @@
   </div>
 
   <!-- Todo List Create Modal -->
-  <div id="todoListCreateModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+  <div id="todoListCreateModal" class="flex hidden fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-display font-bold text-gray-900">Yeni Todo Listesi</h2>
-        <button id="closeTodoListCreateModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+        <h2 class="text-xl font-bold text-gray-900 font-display">Yeni Todo Listesi</h2>
+        <button id="closeTodoListCreateModal" class="text-gray-400 transition-colors hover:text-gray-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -441,20 +545,20 @@
 
       <form id="todoListCreateForm" class="space-y-6">
         <div>
-          <label for="todoListTitle" class="block text-sm font-medium text-gray-700 mb-2">Liste Başlığı</label>
+          <label for="todoListTitle" class="block mb-2 text-sm font-medium text-gray-700">Liste Başlığı</label>
           <input type="text" id="todoListTitle" class="input" placeholder="Örn: Ev alışverişi" required>
         </div>
 
         <div>
-          <label for="todoListDescription" class="block text-sm font-medium text-gray-700 mb-2">Açıklama (Opsiyonel)</label>
-          <textarea id="todoListDescription" class="input h-20 resize-none" placeholder="Liste hakkında kısa açıklama..."></textarea>
+          <label for="todoListDescription" class="block mb-2 text-sm font-medium text-gray-700">Açıklama (Opsiyonel)</label>
+          <textarea id="todoListDescription" class="h-20 resize-none input" placeholder="Liste hakkında kısa açıklama..."></textarea>
         </div>
 
-        <div id="todoListCreateError" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"></div>
+        <div id="todoListCreateError" class="hidden px-4 py-3 text-sm text-red-700 bg-red-50 rounded-lg border border-red-200"></div>
 
         <div class="flex space-x-3">
-          <button type="button" id="cancelTodoListCreate" class="btn-secondary flex-1">İptal</button>
-          <button type="submit" class="btn-primary flex-1">
+          <button type="button" id="cancelTodoListCreate" class="flex-1 btn-secondary">İptal</button>
+          <button type="submit" class="flex-1 btn-primary">
             <span id="todoListCreateButtonText">Oluştur</span>
             <div id="todoListCreateSpinner" class="hidden loading-dots">
               <div></div>
@@ -467,61 +571,43 @@
     </div>
   </div>
 
-  <!-- Todo List Detail Modal -->
-  <div id="todoListDetailModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-4xl mx-4 max-h-[90vh] overflow-hidden flex flex-col">
-      <!-- Header -->
+  <!-- Todo List Edit Modal -->
+  <div id="todoListEditModal" class="flex hidden fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50">
+    <div class="p-8 mx-4 w-full max-w-md bg-white rounded-2xl shadow-2xl">
       <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-gray-900 font-display">Todo Listesini Düzenle</h2>
+        <button id="closeTodoListEditModal" class="text-gray-400 transition-colors hover:text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <form id="todoListEditForm" class="space-y-6">
         <div>
-          <h2 id="todoListDetailTitle" class="text-xl font-display font-bold text-gray-900">Todo Listesi</h2>
-          <p id="todoListDetailDescription" class="text-gray-600 mt-1">Açıklama</p>
-        </div>
-        <div class="flex items-center space-x-2">
-          <button id="editTodoListBtn" class="btn-secondary p-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-            </svg>
-          </button>
-          <button id="closeTodoListDetailModal" class="text-gray-400 hover:text-gray-600 transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="flex-1 overflow-hidden flex flex-col">
-        <!-- Add Todo Item Form -->
-        <div class="card mb-6">
-          <form id="addTodoItemForm" class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" id="todoItemTitle" placeholder="Görev başlığı..." class="input" required>
-              <select id="todoItemSeverity" class="input">
-                <option value="0">Düşük Öncelik</option>
-                <option value="1" selected>Orta Öncelik</option>
-                <option value="2">Yüksek Öncelik</option>
-              </select>
-            </div>
-            <textarea id="todoItemDescription" placeholder="Görev açıklaması (opsiyonel)..." class="input h-20 resize-none"></textarea>
-            <div class="flex justify-end">
-              <button type="submit" class="btn-primary">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-                Görev Ekle
-              </button>
-            </div>
-          </form>
+          <label for="todoListEditTitle" class="block mb-2 text-sm font-medium text-gray-700">Liste Başlığı</label>
+          <input type="text" id="todoListEditTitle" class="input" placeholder="Örn: Ev alışverişi" required>
         </div>
 
-        <!-- Todo Items List -->
-        <div class="flex-1 overflow-y-auto">
-          <div id="todoItemsContainer" class="space-y-3">
-            <!-- Todo items will be dynamically added here -->
-          </div>
+        <div>
+          <label for="todoListEditDescription" class="block mb-2 text-sm font-medium text-gray-700">Açıklama (Opsiyonel)</label>
+          <textarea id="todoListEditDescription" class="h-20 resize-none input" placeholder="Liste hakkında kısa açıklama..."></textarea>
         </div>
-      </div>
+
+        <div id="todoListEditError" class="hidden px-4 py-3 text-sm text-red-700 bg-red-50 rounded-lg border border-red-200"></div>
+
+        <div class="flex space-x-3">
+          <button type="button" id="cancelTodoListEdit" class="flex-1 btn-secondary">İptal</button>
+          <button type="submit" class="flex-1 btn-primary">
+            <span id="todoListEditButtonText">Güncelle</span>
+            <div id="todoListEditSpinner" class="hidden loading-dots">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -662,17 +748,7 @@
           welcomePage.classList.add('hidden');
           app.classList.remove('hidden');
           
-          // Initialize app
-          if (window.app && typeof window.app.init === 'function') {
-            try {
-              await window.app.init();
-            } catch (appError) {
-              console.error('App initialization failed:', appError);
-              // Don't redirect back to login if app init fails
-              // Just show error notification
-              showNotification('Uygulama yüklenirken bir hata oluştu', 'error');
-            }
-          }
+          // App initialization is handled by AuthGuard
           
           // Clear login form after successful login
           clearLoginForm();
@@ -736,15 +812,7 @@
             welcomePage.classList.add('hidden');
             app.classList.remove('hidden');
             
-            // Initialize app
-            if (window.app && typeof window.app.init === 'function') {
-              try {
-                await window.app.init();
-              } catch (appError) {
-                console.error('App initialization failed:', appError);
-                showNotification('Uygulama yüklenirken bir hata oluştu', 'error');
-              }
-            }
+            // App initialization is handled by AuthGuard
           }
           
           // Clear register form after successful registration
@@ -870,15 +938,7 @@
       // Show app
       app.classList.remove('hidden');
       
-      // Initialize app
-      if (window.app && typeof window.app.init === 'function') {
-        try {
-          await window.app.init();
-        } catch (appError) {
-          console.error('App initialization failed:', appError);
-          showNotification('Uygulama yüklenirken bir hata oluştu', 'error');
-        }
-      }
+      // App initialization is handled by AuthGuard
     }
     
     function clearLoginForm() {
@@ -1025,8 +1085,8 @@
           showNotification('Profil başarıyla güncellendi!', 'success');
           closeProfileModal();
           // Refresh app to show updated profile
-          if (window.app && typeof window.app.init === 'function') {
-            await window.app.init();
+          if (window.app && typeof window.app.updateDashboard === 'function') {
+            window.app.updateDashboard();
           }
         } else {
           showProfileError(response.message || 'Profil güncellenirken bir hata oluştu');
@@ -1086,9 +1146,6 @@
     // Initialize with simple timeout
     document.addEventListener('DOMContentLoaded', () => {
       console.log('DOM loaded, starting auth check...');
-      
-      // Clear any existing tokens for testing
-      localStorage.removeItem('todogether_tokens');
       
       // Always show loading first
       document.getElementById('loadingScreen').classList.remove('hidden');

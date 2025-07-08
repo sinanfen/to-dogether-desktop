@@ -22,6 +22,9 @@ class AppConfig {
     const baseUrl = this.getApiBaseUrl();
     
     return {
+      // Base URL for custom endpoints
+      baseUrl: baseUrl,
+      
       // Health check
       health: `${baseUrl}`,
       
